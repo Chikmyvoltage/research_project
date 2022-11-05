@@ -1,0 +1,40 @@
+\ProvidesPackage{research_macros}
+
+\newenvironment{SetUnsetFont} [2] [] {
+	\newfontfamily\helperfont[Script=Latin, Scale=#2]{#1}
+	\helperfont
+}
+{
+
+}
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\makeatletter
+\def\footnoterule{
+	\kern-3\p@
+	\rule{200pt}{0.7pt}
+	\kern 2.6\p@
+}
+\makeatother
+
+% Chapter styling
+\titleformat{\chapter}[hang]{\Huge\bfseries}{
+	\thechapter
+	\hsp
+	\textcolor{gray75}{|}
+	\hsp
+}{0pt}{\Huge\bfseries}
+
+
+% Dash
+\DeclareRobustCommand\dash{
+	\unskip
+	\nobreak
+	\thinspace
+	\textemdash
+	\allowbreak
+	\thinspace
+	\ignorespaces
+}
